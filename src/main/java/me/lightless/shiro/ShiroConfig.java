@@ -36,6 +36,7 @@ public class ShiroConfig {
 
         Map<String, String> map = new HashMap<>();
         map.put("/account/**", "authc");
+        map.put("/admin/*", "authc");
         bean.setFilterChainDefinitionMap(map);
 
         return bean;

@@ -5,6 +5,7 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,6 +16,11 @@ public class MainController {
     @GetMapping("/account/index")
     public String accountIndex() {
         return "Login Success.";
+    }
+
+    @GetMapping("/admin/{action}")
+    public String adminAction(@PathVariable String action) {
+        return "action: " + action;
     }
 
     // 无需登录就能看的接口
